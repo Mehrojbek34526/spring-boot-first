@@ -1,0 +1,32 @@
+GET http://localhost:8080/employee/search?birthDate=2004-01-17
+###
+
+GET http://localhost:8080/employee;
+
+###
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+{
+  "firstName": "Olim",
+  "lastName": "Olimov",
+  "email": "olimjon@gmail.com",
+  "phone": "+998995641232",
+  "birthDate": "2001-01-17"
+}
+
+###
+
+PUT http://localhost:8080/employee/4f139c3a-ce19-4bae-8fa6-750c4b459c8a
+Content-Type: application/json
+
+{
+  "firstName": "Johnjon",
+  "lastName": "Doe amaki",
+  "email": "doejohn@gmail.com",
+  "phone": "+998995641232",
+  "birthDate": "2004-01-17"
+}
+
+###
+DELETE http://localhost:8080/employee/4f139c3a-ce19-4bae-8fa6-750c4b459c8a
