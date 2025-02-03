@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung A14",
+    "price": 3000000
+  },
+  {
+    "id": 2,
+    "name": "Samsung A15",
+    "price": 4000000
+  },
+  {
+    "id": 3,
+    "name": "Samsung A16",
+    "price": 4500000
+  }
+]
