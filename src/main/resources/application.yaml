@@ -1,14 +1,3 @@
-server:
-  port: 8080
 spring:
-  application:
-    name: first-project
-  datasource:
-    url: jdbc:postgresql://localhost:5432/spring_first
-    username: postgres
-    password: root123
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  profiles:
+    active: prod

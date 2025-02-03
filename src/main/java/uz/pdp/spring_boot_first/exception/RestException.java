@@ -14,6 +14,11 @@ public class RestException extends RuntimeException {
         }
     }
 
+    public static RestException error(String message) {
+        return new RestException(message);
+    }
+
+
     public RestException(String message) {
         super(message);
     }

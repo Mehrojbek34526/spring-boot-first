@@ -1,6 +1,8 @@
 package uz.pdp.spring_boot_first.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
@@ -33,4 +35,8 @@ public class Employee extends AbsUUIDEntity {
     private String phone;
 
     private LocalDate birthDate;
+
+    @ToString.Exclude
+    @OneToOne(fetch = FetchType.LAZY)
+    private Attachment photo;
 }

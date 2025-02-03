@@ -1,0 +1,18 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: first-project
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_first
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  files:
+    baseFolder: /root/files

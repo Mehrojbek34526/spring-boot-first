@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "uz.pdp.spring_boot_first.mapper")
+@ComponentScan(basePackages = {"uz.pdp.spring_boot_first.mapper","uz.pdp.spring_boot_first"})
 public class SpringBootFirstApplication {
 
 	public static void main(String[] args) {
