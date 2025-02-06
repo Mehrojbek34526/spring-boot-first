@@ -1,11 +1,11 @@
 package uz.pdp.spring_boot_first.entity.template;
 
-import jakarta.persistence.*;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
-import java.sql.Timestamp;
 import java.util.UUID;
 
 /**
@@ -18,19 +18,10 @@ import java.util.UUID;
 @Setter
 @ToString
 @MappedSuperclass
-public abstract class AbsUUIDEntity {
+public abstract class AbsUUIDEntity extends AbsDateAuditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
-    @CreationTimestamp
-    @Column(updatable = false)
-    private Timestamp createdAt;
-
-    @UpdateTimestamp
-    private Timestamp updatedAt;
-
-    private boolean deleted;
 
 }

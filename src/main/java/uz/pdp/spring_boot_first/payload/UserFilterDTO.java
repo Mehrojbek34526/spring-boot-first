@@ -6,23 +6,33 @@ import lombok.NoArgsConstructor;
 import uz.pdp.spring_boot_first.enums.GenderEnum;
 import uz.pdp.spring_boot_first.enums.RoleEnum;
 
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.UUID;
 
 /**
- * DTO for {@link uz.pdp.spring_boot_first.entity.User}
- */
-@Data
+ Created by: Mehrojbek
+ DateTime: 05/02/25 20:50
+ **/
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO implements Serializable {
-    private UUID id;
+@Data
+public class UserFilterDTO {
+
     private String firstName;
+
     private String lastName;
+
     private String username;
+
     private RoleEnum role;
-    private LocalDate birthDate;
+
+    private LocalDate birthDateFrom;
+
+    private LocalDate birthDateTo;
+
     private GenderEnum gender;
-    private AddressDTO address;
+
+    //address
+    private String city;
+
+    private String country;
 }

@@ -4,11 +4,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import uz.pdp.spring_boot_first.enums.RoleEnum;
 import uz.pdp.spring_boot_first.payload.UserDTO;
+import uz.pdp.spring_boot_first.payload.UserFilterDTO;
 import uz.pdp.spring_boot_first.service.UserService;
 
-import java.util.logging.Logger;
+import java.util.List;
 
 /**
  Created by: Mehrojbek
@@ -23,9 +26,21 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/me")
-    public UserDTO me(){
+    public UserDTO me(@RequestParam String username) {
         log.info(">> me ");
-        return userService.me();
+        return userService.me(username);
+    }
+
+    @GetMapping("/by-role")
+    public List<UserDTO> byRole(@RequestParam RoleEnum role) {
+        log.info(">> byRole ");
+        return userService.byRole(role);
+    }
+
+    @GetMapping("/filter")
+    public List<UserDTO> filter(UserFilterDTO filterDTO) {
+        log.info(">> filter {}", filterDTO);
+        return userService.filter(filterDTO);
     }
 
 }
