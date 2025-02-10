@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import uz.pdp.spring_boot_first.entity.User;
 import uz.pdp.spring_boot_first.enums.RoleEnum;
+import uz.pdp.spring_boot_first.payload.UserShortInfo;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,5 +28,15 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     //native query
     @Query(value = "select users from users where users.address.country=:country", nativeQuery = true)
     List<User> getMyCountryUsersNative(String country);
+
+    @Query(value = """
+            select u.id              as id,
+                   u.firstName       as firstName,
+                   u.lastName        as lastName,
+                   u.address.country as country,
+                   u.address.city    as city
+            from users u
+            """)
+    List<UserShortInfo> getUserShortInfo();
 
 }

@@ -44,6 +44,7 @@ public class User extends AbsUUIDEntity {
     @Enumerated(EnumType.STRING)
     private GenderEnum gender;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     private Address address;
 

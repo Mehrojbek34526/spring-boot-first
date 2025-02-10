@@ -13,6 +13,8 @@ public interface EmployeeMapper {
     @Mapping(target = "deleted", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "workingCompanies", ignore = true)
+    @Mapping(target = "cards", ignore = true)
     Employee toEntity(EmployeeDTO employeeDTO);
 
     EmployeeDTO toDTO(Employee employee);
@@ -21,6 +23,8 @@ public interface EmployeeMapper {
     @Mapping(target = "deleted", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "workingCompanies", ignore = true)
+    @Mapping(target = "cards", ignore = true)
     void updateEntity(EmployeeDTO employeeDTO, @MappingTarget Employee employee);
 
 }

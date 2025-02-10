@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -24,4 +25,6 @@ public class EmployeeDTO implements Serializable {
     private String email;
     private String phone;
     private LocalDate birthDate;
+    private List<CompanyDTO> workingCompanies;
+    private List<BankCardDTO> cards;
 }
