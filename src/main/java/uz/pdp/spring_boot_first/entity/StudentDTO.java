@@ -18,7 +18,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Accessors(chain = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StudentDto implements Serializable {
+public class StudentDTO implements Serializable {
     private String firstName;
     private String lastName;
     private LocalDate birthDate;

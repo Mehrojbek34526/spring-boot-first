@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  Created by: Mehrojbek
@@ -63,7 +64,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> get() {
-        return employeeRepository.findAll();
+
+
+        List<Employee> employees = employeeRepository.findAll();
+
+
+        return employees;
     }
 
     @Transactional(dontRollbackOn = {ArithmeticException.class}, rollbackOn = {Exception.class})
